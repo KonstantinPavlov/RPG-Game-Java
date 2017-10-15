@@ -45,6 +45,8 @@ public class Player extends Mob {
         this.x = x;
         this.y = y;
         this.keyboardInput = keyboardInput;
+        this.sprite = Sprite.player_oldman_down;
+        this.movementSpeed = 2;
     }
 
     @Override

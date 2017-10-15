@@ -56,7 +56,7 @@ public class Game extends Canvas implements Runnable {
         addKeyListener(keyboardInput);
 //        level = new RandomLevel(64, 64);
         level = new SpawnLevel("/textures/tiles/level_0.png");
-        player = new Player(keyboardInput);
+        player = new Player(300,400,keyboardInput);
     }
 
     public static int getCustomWidth() {

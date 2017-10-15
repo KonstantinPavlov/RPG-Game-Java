@@ -26,7 +26,7 @@ public class RandomLevel extends Level {
     protected void generateLevel() {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                tiles[x + y * width] = random.nextInt(4);
+                tilesInt[x + y * width] = random.nextInt(4);
             }
         }
     }
@@ -34,10 +34,10 @@ public class RandomLevel extends Level {
     @Override
     protected Tile getTile(int x, int y) {
         if (x < 0 || y < 0 || x >= width || y >= height) return Tile.voidTile;
-        if (tiles[x + y * width] == 0) return Tile.grass; // returning grass Tile
-        if (tiles[x + y * width] == 1) return Tile.yellow_grass; // returning grass Tile
-        if (tiles[x + y * width] == 2) return Tile.mud; // returning grass Tile
-        if (tiles[x + y * width] == 3) return Tile.grass; // returning grass Tile
+        if (tilesInt[x + y * width] == 0) return Tile.grass; // returning grass Tile
+        if (tilesInt[x + y * width] == 1) return Tile.yellow_grass; // returning grass Tile
+        if (tilesInt[x + y * width] == 2) return Tile.mud; // returning grass Tile
+        if (tilesInt[x + y * width] == 3) return Tile.grass; // returning grass Tile
         return Tile.voidTile;
     }
 }
