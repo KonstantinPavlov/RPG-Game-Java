@@ -3,7 +3,9 @@ package com.sdr.rpg;
 import com.sdr.rpg.entity.mob.Player;
 import com.sdr.rpg.graphics.Renderer;
 import com.sdr.rpg.graphics.ScreenRenderer;
+import com.sdr.rpg.graphics.SpriteSheet;
 import com.sdr.rpg.input.KeyboardInput;
+import com.sdr.rpg.level.JsonLevel;
 import com.sdr.rpg.level.Level;
 import com.sdr.rpg.level.RandomLevel;
 import com.sdr.rpg.level.SpawnLevel;
@@ -55,7 +57,8 @@ public class Game extends Canvas implements Runnable {
         keyboardInput = new KeyboardInput();
         addKeyListener(keyboardInput);
 //        level = new RandomLevel(64, 64);
-        level = new SpawnLevel("/textures/tiles/level_0.png");
+//        level = new SpawnLevel("/textures/tiles/level_0.png");
+        level = new JsonLevel("/maps/level_alpha.json", SpriteSheet.world);
         player = new Player(300,400,keyboardInput);
     }
 

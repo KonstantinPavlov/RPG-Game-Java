@@ -84,7 +84,10 @@ public class ScreenRenderer implements Renderer {
                 if (xAbsolute < -tile.getSprite().getSize() || xAbsolute >= width || yAbsolute < 0 || yAbsolute >= height)
                     break;
                 if (xAbsolute < 0) xAbsolute = 0;
-                pixels[xAbsolute + yAbsolute * width] = tile.getSprite().getPixels()[x + y * tile.getSprite().getSize()];
+                // add mask
+                int colour = tile.getSprite().getPixels()[x + y * tile.getSprite().getSize()];
+                if (colour != tile.getSprite().getMask())
+                    pixels[xAbsolute + yAbsolute * width] = colour;
             }
 
         }

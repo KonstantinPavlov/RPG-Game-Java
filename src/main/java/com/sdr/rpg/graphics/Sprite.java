@@ -105,7 +105,11 @@ public class Sprite {
     private void loadSprite() {
         for (int y = 0; y < y_SIZE; y++) {
             for (int x = 0; x < x_SIZE; x++) {
-                pixels[x + y * x_SIZE] = spriteSheet.getPixels()[(x + this.x) + (y + this.y) * spriteSheet.getWight()];
+                try {
+                    pixels[x + y * x_SIZE] = spriteSheet.getPixels()[(x + this.x) + (y + this.y) * spriteSheet.getWight()];
+                }catch (ArrayIndexOutOfBoundsException e){
+                    System.out.println("opps");
+                }
             }
         }
     }

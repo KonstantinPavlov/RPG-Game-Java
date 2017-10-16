@@ -45,12 +45,14 @@ public abstract class Level {
 
         for (int y = y0; y < y1; y++) {
             for (int x = x0; x < x1; x++) {
-                getTile(x, y).render(x, y, screenRenderer);
+                Tile tile = getTile(x, y);
+                if (tile != null)
+                    tile.render(x, y, screenRenderer);
             }
         }
     }
 
-    protected  Tile getTile(int x, int y){
+    protected Tile getTile(int x, int y) {
         if (x < 0 || y < 0 || x >= width || y >= height) return Tile.voidTile;
         if (tiles[x + y * width] == 0xFF00FF00) return Tile.grass; // returning grass Tile
         if (tiles[x + y * width] == 0xFFFFFF00) return Tile.yellow_grass;
