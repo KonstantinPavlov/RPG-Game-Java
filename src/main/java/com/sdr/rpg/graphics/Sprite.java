@@ -23,6 +23,7 @@ public class Sprite {
     public static Sprite mud = new Sprite(16, 12, 13, SpriteSheet.world);
 
     public static Sprite voidSprite = new Sprite(16, 0x1B87E0);
+    public static Sprite voidSprite32 = new Sprite(32, 0x1B87E0);
 
     /**
      * Player sprites

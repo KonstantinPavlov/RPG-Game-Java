@@ -17,6 +17,7 @@ public class SpriteSheet {
     private int[] pixels;
 
     public static SpriteSheet world = new SpriteSheet("/textures/tiles/world.png",640,576);
+    public static SpriteSheet world_32 = new SpriteSheet("/textures/tiles/world_32.png",1280,1152);
     public static SpriteSheet actors = new SpriteSheet("/textures/tiles/actors.png",384,384);
 
     /**

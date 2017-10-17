@@ -13,7 +13,7 @@ public abstract class Mob extends Entity {
     protected int movementSpeed;
 
     protected Sprite sprite;
-    protected int direction = 2; //
+    protected int direction = 1; //
     protected boolean moving = false;
 
     public void move(int xDirection, int yDirection) {

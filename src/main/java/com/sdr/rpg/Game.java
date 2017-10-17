@@ -58,8 +58,8 @@ public class Game extends Canvas implements Runnable {
         addKeyListener(keyboardInput);
 //        level = new RandomLevel(64, 64);
 //        level = new SpawnLevel("/textures/tiles/level_0.png");
-        level = new JsonLevel("/maps/level_alpha.json", SpriteSheet.world);
-        player = new Player(300,400,keyboardInput);
+        level = new JsonLevel("/maps/level_alpha32.json", SpriteSheet.world_32);
+        player = new Player(400,800,keyboardInput);
     }
 
     public static int getCustomWidth() {

@@ -17,6 +17,7 @@ public abstract class Tile {
     public static Tile yellow_grass = new GrassTile(Sprite.yellow_grass);
     public static Tile mud = new GrassTile(Sprite.mud);
     public static Tile voidTile = new VoidTile(Sprite.voidSprite);
+    public static Tile voidTile32 = new VoidTile(Sprite.voidSprite32);
 
     public Tile(Sprite sprite) {
         this.sprite = sprite;

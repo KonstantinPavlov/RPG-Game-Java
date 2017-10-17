@@ -14,6 +14,6 @@ public class VoidTile extends Tile {
 
     @Override
     public void render(int x, int y, Renderer renderer) {
-        renderer.renderTile(x << 4, y << 4, this);
+        renderer.renderTile(x << 5, y << 5, this);
     }
 }

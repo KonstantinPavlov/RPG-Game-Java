@@ -110,10 +110,10 @@ public class JsonLevel extends Level {
 
     public void render(int xScroll, int yScroll, Renderer screenRenderer) {
         screenRenderer.setOffset(xScroll, yScroll);
-        int x0 = xScroll >> 4;
-        int x1 = (xScroll + screenRenderer.getWidth() + 16) >> 4;
-        int y0 = yScroll >> 4;
-        int y1 = (yScroll + screenRenderer.getHeight() + 16) >> 4;
+        int x0 = xScroll >> 5;
+        int x1 = (xScroll + screenRenderer.getWidth() + 32) >> 5;
+        int y0 = yScroll >> 5;
+        int y1 = (yScroll + screenRenderer.getHeight() + 32) >> 5;
 
         for (int y = y0; y < y1; y++) {
             for (int x = x0; x < x1; x++) {
@@ -134,7 +134,7 @@ public class JsonLevel extends Level {
     }
 
     protected Tile getTile(int x, int y) {
-        if (x < 0 || y < 0 || x >= width || y >= height) return Tile.voidTile;
+        if (x < 0 || y < 0 || x >= width || y >= height) return Tile.voidTile32;
         int index = layer1[x  + y * width ];
         if (index == 0) {
             return null;
@@ -143,7 +143,7 @@ public class JsonLevel extends Level {
     }
 
     protected Tile getTile2(int x, int y) {
-        if (x < 0 || y < 0 || x >= width || y >= height) return Tile.voidTile;
+        if (x < 0 || y < 0 || x >= width || y >= height) return Tile.voidTile32;
         int index = layer2[x  + y * width ];
         if (index == 0) {
             return null;
